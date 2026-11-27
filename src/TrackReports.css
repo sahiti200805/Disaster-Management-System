@@ -1,0 +1,353 @@
+
+/* =====================================
+   TRACK DISASTER REPORTS - PREMIUM CSS
+===================================== */
+
+/* Main Background */
+.track-container {
+  min-height: 100vh;
+  padding: 45px 25px;
+  font-family: Arial, sans-serif;
+  color: #102a56;
+  background: linear-gradient(
+    -45deg,
+    #eaf2ff,
+    #f0f7ff,
+    #e4edff,
+    #f5f8ff
+  );
+  background-size: 400% 400%;
+  animation: backgroundMove 12s ease infinite;
+}
+
+@keyframes backgroundMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Main Heading */
+.track-container h1 {
+  text-align: center;
+  font-size: 32px;
+  color: #092c5c;
+  margin-bottom: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-shadow: 0 3px 8px rgba(10, 50, 100, 0.12);
+}
+
+.track-subtitle {
+  text-align: center;
+  color: #64748b;
+  font-size: 16px;
+  margin-bottom: 25px;
+  letter-spacing: 0.3px;
+}
+
+/* Search and Filter */
+.track-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 25px auto;
+  padding: 18px;
+  width: fit-content;
+  max-width: 100%;
+  flex-wrap: wrap;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 8px 25px rgba(20, 60, 120, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.track-controls input,
+.track-controls select {
+  padding: 13px 16px;
+  width: 240px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: #ffffff;
+  font-size: 15px;
+  outline: none;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+
+.track-controls input:focus,
+.track-controls select:focus {
+  border-color: #1675d1;
+  box-shadow: 0 0 0 3px rgba(22, 117, 209, 0.15);
+}
+
+.track-controls input:hover,
+.track-controls select:hover {
+  border-color: #93c5fd;
+}
+
+/* Summary Cards */
+.track-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin: 25px 0 30px;
+}
+
+.track-summary > div {
+  position: relative;
+  overflow: hidden;
+  background: white;
+  padding: 22px;
+  min-height: 95px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  border-top: 4px solid #1683df;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 35, 80, 0.10);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.3s ease;
+  animation: cardAppear 0.6s ease both;
+}
+
+.track-summary > div::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(22, 131, 223, 0.06);
+  right: -30px;
+  top: -35px;
+}
+
+.track-summary > div:nth-child(2) {
+  border-top-color: #f59e0b;
+}
+
+.track-summary > div:nth-child(3) {
+  border-top-color: #2563eb;
+}
+
+.track-summary > div:nth-child(4) {
+  border-top-color: #10b981;
+}
+
+.track-summary > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 35, 80, 0.16);
+}
+
+.track-summary h2 {
+  color: #0875d1;
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0 0 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.track-summary p {
+  color: #334155;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Reports Grid */
+.track-report-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* Individual Report Card */
+.track-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #ffffff, #f8fbff);
+  padding: 22px;
+  border: 1px solid #e2e8f0;
+  border-bottom: 5px solid #10b981;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 35, 80, 0.10);
+  transition: all 0.3s ease;
+  animation: cardAppear 0.6s ease both;
+}
+
+.track-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #0875d1, #38bdf8);
+}
+
+.track-card:hover {
+  transform: translateY(-7px);
+  border-bottom-color: #0875d1;
+  box-shadow: 0 12px 25px rgba(0, 35, 80, 0.17);
+}
+
+/* Report Title */
+.track-card h3 {
+  text-align: center;
+  color: #0875d1;
+  background: linear-gradient(90deg, #eaf4ff, #f1f7ff);
+  padding: 13px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 17px;
+  margin: 0 0 20px;
+}
+
+/* Report Details */
+.track-card p {
+  font-size: 15px;
+  color: #334155;
+  margin: 9px 0;
+  padding: 3px 0;
+  line-height: 1.5;
+}
+
+.track-card strong {
+  color: #102a56;
+}
+
+/* Status Badges */
+.status-pending,
+.status-approved,
+.status-resolved {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.status-pending {
+  color: #d97706;
+  background: #fef3c7;
+}
+
+.status-approved {
+  color: #0875d1;
+  background: #dbeafe;
+}
+
+.status-resolved {
+  color: #059669;
+  background: #d1fae5;
+}
+
+/* Information Message */
+.user-status-note {
+  color: #1e40af;
+  background: #eff6ff;
+  border-left: 4px solid #3b82f6;
+  padding: 11px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+/* No Reports Message */
+.no-reports {
+  text-align: center;
+  background: white;
+  padding: 35px;
+  border-radius: 15px;
+  color: #64748b;
+  font-size: 18px;
+  grid-column: 1 / -1;
+  box-shadow: 0 5px 15px rgba(0, 35, 80, 0.08);
+}
+
+/* Card Animation */
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Text Selection */
+.track-container ::selection {
+  background: #bfdbfe;
+  color: #092c5c;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1000px) {
+  .track-report-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .track-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .track-container {
+    padding: 25px 15px;
+  }
+
+  .track-container h1 {
+    font-size: 25px;
+  }
+
+  .track-report-list {
+    grid-template-columns: 1fr;
+  }
+
+  .track-summary {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .track-controls {
+    width: auto;
+    flex-direction: column;
+  }
+
+  .track-controls input,
+  .track-controls select {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .track-card {
+    padding: 18px;
+  }
+
+  .track-summary h2 {
+    font-size: 25px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .track-container,
+  .track-card,
+  .track-summary > div {
+    animation: none;
+    transition: none;
+  }
+}
